@@ -1,0 +1,10 @@
+[
+  {
+    "name": "numero",
+    "pattern": "\\d{10,12}"
+  },
+  {
+    "name": "numero",
+    "pattern": "^7\\d{10,12}"
+  }
+]

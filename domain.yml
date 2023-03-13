@@ -23,6 +23,18 @@ intents:
   - squirtle_dex
   - bulbasaur_dex
   - give_time
+  - credit_account
+  - my_account_number
+  - suscribirse
+  - correo
+  - teléfono
+
+entities:
+  - account
+  - account_number
+  - email
+  - phone
+
 
 actions:
   - action_show_time
@@ -87,6 +99,22 @@ responses:
 
   utter_bulbasaur_dex:
   - text: "Bulbasaur, Pokémon semilla. A Bulbasaur es fácil verle echándose una siesta al sol. La semilla que tiene en el lomo va creciendo cada vez más a medida que absorbe los rayos del sol."
+
+  utter_credit_account:
+  - text: "¿Cuál es tu número de cuenta?"
+
+  utter_my_account_number:
+  - text: "Tu saldo es de 3 euros."
+
+  utter_suscribirse:
+  - text: "¿Cuál es tu correo?"
+
+  utter_correo:
+  - text: "Muchas gracias. Tu correo electrónico ha sido registrado correctamente. ¿Cuál es su número de teléfono?"
+
+  utter_telefono:
+  - text: "Muchas gracias. Su suscripción ha sido completada con éxito. En unos instantes recibirá el correo de confirmación y un SMS con el código de acceso."
+
 
 session_config:
   session_expiration_time: 60

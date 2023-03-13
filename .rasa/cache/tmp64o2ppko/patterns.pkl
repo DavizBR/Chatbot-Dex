@@ -1,0 +1,6 @@
+[
+  {
+    "name": "Pokémon",
+    "pattern": "(\\bCharmander\\b|\\bBulbasaur\\b|\\bSquirtle\\b)"
+  }
+]
