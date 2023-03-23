@@ -27,6 +27,24 @@
 <button class="my-button" style="margin-left: 450px"> MY BUTTON</button>
   <script src="index.js"  type="text/javascript"></script>
   <div style="width: 400px; height: 2000px; border: 3px solid lightsalmon;" id="webchat" />
+
+  <div id="webchat"/>
+<script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js"></script>
+<script>
+  WebChat.default.init({
+    selector: "#webchat",
+    initPayload: "/get_started",
+    customData: {"sender": "me"},
+    socketUrl: "https://<YOUR_RASA_SERVER_URL>",
+    title: "Mi chatbot",
+    subtitle: "Ayuda para tus dudas",
+    inputTextFieldHint: "Escribe tu mensaje...",
+    profileAvatar: "https://your-url.com/avatar.jpg",
+    showMessageDate: true,
+    showCloseButton: true,
+    fullScreenMode: false
+  })
+</script>
 </body>
 
 </html>
