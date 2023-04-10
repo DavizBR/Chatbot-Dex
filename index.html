@@ -1,28 +1,42 @@
+<!DOCTYPE html>
 <html>
-
-
-<head>
-
-	<title>Chatbot de Rasa</title>
-  <script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"></script>
-
-</head>
-
-
-<body>
-
-	<h1>Chatbot de Rasa</h1>
-  <div id="webchat"></div>
-
-  <script>
-		WebChat.default.init({
-			selector: "#webchat",
-			initPayload: "/get_started",
-			
-		})
-	</script>
-
-</body>
-
-
+  <head>
+    <title>Chatbot de Rasa</title>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      iframe {
+        height: 100%;
+        width: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe
+      src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.html"
+      id="webchat"
+      frameborder="0"
+    ></iframe>
+    <script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"></script>
+    <script>
+      WebChat.default.init({
+        selector: "#webchat",
+        initPayload: "/get_started",
+        interval: 1000,
+        customData: { language: "en" },
+        socketUrl: "http://localhost:5050/webhooks/rest/webhook",
+        title: "Chatbot de Rasa",
+        subtitle: "Asistente virtual",
+        inputTextFieldHint: "Escribe tu mensaje...",
+        connectingText: "Conectando...",
+        hideWhenNotConnected: true,
+        showMessageDate: true,
+        showFullScreenButton: true,
+      });
+    </script>
+  </body>
 </html>
