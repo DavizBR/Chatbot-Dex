@@ -15,7 +15,9 @@ action_endpoint:
 
 models:
   default:
-    model: "models/20230209-134938-marked-velour.tar.gz"
+    path: "models/20230411-125735-sophisticated-vertex.tar.gz"
+    model: "Rotom"
+
 
 # Tracker store which is used to store the conversations.
 # By default the conversations are stored in memory.
