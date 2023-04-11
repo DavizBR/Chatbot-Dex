@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Chaaatbot</title>
+    <title>Chatbot de Rasa 4.0</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="style.css">
 
   </head>
   <body>
     <iframe
-      src="https://davizbr.github.io/Chatbot-Dex/"
+      src="http://127.0.0.1:5050"
       id="webchat"
       frameborder="0"
     ></iframe>
-    <script type="text/javascript" src="https://davizbr.github.io/Chatbot-Dex/rasa-webchat.js"></script>
+    <script type="text/javascript" src="rasa-webchat.js"></script>
     <script>
       WebChat.default.init({
         selector: "#webchat",
         initPayload: "/greet",
         interval: 1000,
         customData: { language: "es" },
-        socketUrl: "https://davizbr.github.io/Chatbot-Dex/",
+        socketUrl: "http://localhost:5050/webhooks/rest/webhook",
         title: "Chatbot de Rasa",
         subtitle: "Asistente virtual",
         inputTextFieldHint: "Escribe tu mensaje...",
