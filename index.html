@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Chatbot de Rasa 3.0</title>
+    <title>Chatbot de Rasa 4.0</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="style.css">
 
   </head>
   <body>
     <iframe
-      src="http://127.0.0.1:5005"
+      src="http://127.0.0.1:5050"
       id="webchat"
       frameborder="0"
     ></iframe>
@@ -19,7 +19,7 @@
         initPayload: "/get_started",
         interval: 1000,
         customData: { language: "en" },
-        socketUrl: "http://localhost:5005/webhooks/rest/webhook",
+        socketUrl: "http://localhost:5050/webhooks/rest/webhook",
         title: "Chatbot de Rasa",
         subtitle: "Asistente virtual",
         inputTextFieldHint: "Escribe tu mensaje...",
