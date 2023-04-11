@@ -13,10 +13,9 @@
 action_endpoint:
   url: "http://localhost:5055/webhook"
 
-#models:
-#  default:
-#    url: "http://localhost:5050"
-#    webhook_url: "http://localhost:5050/webhooks/rest/webhook"
+models:
+  default:
+    model: "models/20230209-134938-marked-velour.tar.gz"
 
 # Tracker store which is used to store the conversations.
 # By default the conversations are stored in memory.
