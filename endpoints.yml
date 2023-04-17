@@ -13,16 +13,16 @@
 action_endpoint:
   url: "http://localhost:5055/webhook"
 
-models:
-  default:
-    path: "models/20230411-125735-sophisticated-vertex.tar.gz"
-    model: "Rotom"
+#models:
+#  default:
+#    path: "models/20230411-125735-sophisticated-vertex.tar.gz"
+#    model: "Rotom"
 
-socketio:
-  user_message_evt: user_uttered
-  bot_message_evt: bot_uttered
-  session_persistence: true
-  url: "https://davizbr.github.io/Chatbot-Dex"
+#socketio:
+#  user_message_evt: user_uttered
+#  bot_message_evt: bot_uttered
+#  session_persistence: true
+#  url: "https://davizbr.github.io/Chatbot-Dex"
 
 
 # Tracker store which is used to store the conversations.
