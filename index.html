@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Chatbot 7</title>
+    <title>Chatbot 8</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="style.css">
 
   </head>
   <body>
     <iframe
-      src="https://davizbr.github.io/Chatbot-Dex/webhooks/rest/webhook"
+      src="https://davizbr.github.io/Chatbot-Dex/"
       id="webchat"
       frameborder="0"
     ></iframe>
-    <script type="text/javascript" src="rasa-webchat.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js"></script>
     <script>
       WebChat.default.init({
         selector: "#webchat",
         initPayload: "/get_started",
         interval: 1000,
-        customData: { language: "en" },
+        customData: { language: "es" },
         socketUrl: "https://davizbr.github.io/Chatbot-Dex/webhooks/rest/webhook",
         title: "Chatbot de Rasa",
         subtitle: "Asistente virtual",
