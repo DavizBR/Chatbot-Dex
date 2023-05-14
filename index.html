@@ -7,7 +7,33 @@
 
   </head>
   <body>
-    <iframe
+    <script>!(function () {
+      let e = document.createElement("script"),
+        t = document.head || document.getElementsByTagName("head")[0];
+      (e.src =
+        "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.0/lib/index.js"),
+        // Replace 1.0.0 with the version that you want
+        (e.async = !0),
+        (e.onload = () => {
+          window.WebChat.default(
+            {
+              customData: { language: "en" },
+              socketUrl: "https://davizbr.github.io/Chatbot-Dex/",
+              title: "Chatbot de Rasa",
+              subtitle: "Asistente virtual",
+              inputTextFieldHint: "Escribe tu mensaje...",
+              connectingText: "Conectando...",
+              // add other props here
+            },
+            null
+          );
+        }),
+        t.insertBefore(e, t.firstChild);
+    })();
+    </script>
+
+
+   <!-- <iframe>
       src="https://davizbr.github.io/Chatbot-Dex/"
       id="webchat"
       frameborder="0"
@@ -28,6 +54,6 @@
         showMessageDate: true,
         showFullScreenButton: true,
       });
-    </script>
+    </script>-->
   </body>
 </html>
