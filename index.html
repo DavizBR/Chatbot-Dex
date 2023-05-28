@@ -1,28 +1,31 @@
+</html>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Chatbot con Botfront</title>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Chatbot de Rasa</title>
+    <style>
+        #webchat {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
 </head>
-
 <body>
-  <div id="chatbot"></div>
+    <div id="webchat"></div>
 
-  <script src="https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.0/lib/index.js"></script>
-  <script>
-    WebChat.default.init({
-      selector: "#chatbot",
-      initPayload: "/get_started",
-      socketUrl: "https://davizbr.github.io/Chatbot-Dex",
-      customData: { language: "es" },
-      title: "Chatbot con Botfront",
-      subtitle: "¡Hola! ¿En qué puedo ayudarte?",
-      inputTextFieldHint: "Escribe tu mensaje aquí...",
-      params: {
-        storage: "session"
-      }
-    });
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js"></script>
+    <script>
+        WebChat.default.init({
+            selector: "#webchat",
+            initPayload: "/get_started",
+            socketUrl: "https://davizbr.github.io/Chatbot-Dex",
+            socketPath: "/socket.io/",
+            title: "Chatbot de Rasa",
+            subtitle: "¡Hola! ¿En qué puedo ayudarte?",
+            params: {
+                storage: "session"
+            }
+        });
+    </script>
 </body>
 </html>
