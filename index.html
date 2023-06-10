@@ -1,31 +1,123 @@
-</html>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Chatbot de Rasa</title>
-    <style>
-        #webchat {
-            width: 100%;
-            height: 500px;
-        }
-    </style>
+  <title>Widget de Conversación con Chatbot</title>
+  <style>
+    #chat-widget {
+      width: 300px;
+      height: 400px;
+      border: 1px solid #ccc;
+      overflow-y: scroll;
+    }
+    #user-input {
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-    <div id="webchat"></div>
+  <h1>Widget de Conversación con Chatbot</h1>
 
-    <script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js"></script>
-    <script>
-        WebChat.default.init({
-            selector: "#webchat",
-            initPayload: "/get_started",
-            socketUrl: "https://davizbr.github.io/Chatbot-Dex",
-            socketPath: "/socket.io/",
-            title: "Chatbot de Rasa",
-            subtitle: "¡Hola! ¿En qué puedo ayudarte?",
-            params: {
-                storage: "session"
-            }
-        });
-    </script>
+  <div id="chat-widget">
+    <div id="chat-container"></div>
+  </div>
+
+  <input type="text" id="user-input" placeholder="Escribe tu mensaje..." />
+
+  <script>
+    // Obtén una referencia al elemento del contenedor de chat
+    const chatContainer = document.getElementById('chat-container');
+
+    // Función para agregar un mensaje al contenedor de chat
+    function addMessage(message, sender) {
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('message');
+      messageElement.classList.add(sender);
+      messageElement.textContent = message;
+      chatContainer.appendChild(messageElement);
+    }
+
+    // Función para enviar el mensaje del usuario al chatbot y mostrar la respuesta
+    function sendMessage() {
+      const userInput = document.getElementById('user-input');
+      const userMessage = userInput.value;
+      
+      // Agrega el mensaje del usuario al contenedor de chat
+      addMessage(userMessage, 'user');
+
+
+
+
+
+
+
+
+
+      // Envía el mensaje al chatbot (puedes utilizar AJAX, WebSocket, etc. según tu configuración de Rasa)
+        // URL del servidor de tu chatbot en Rasa
+        const serverUrl = 'https://github.com/DavizBR/Chatbot-Dex';
+        // https://github.com/DavizBR/Chatbot-Dex.git
+
+        // Crea una instancia del WebSocket
+        const socket = new WebSocket(serverUrl);
+
+        // Función para manejar los mensajes entrantes del chatbot
+        socket.onmessage = function(event) {
+        const botMessage = event.data;
+
+        // Agrega el mensaje del chatbot al contenedor de chat
+        addMessage(botMessage, 'bot');
+        };
+
+        // Función para enviar el mensaje del usuario al chatbot
+        function sendMessage() {
+        const userInput = document.getElementById('user-input');
+        const userMessage = userInput.value;
+
+        // Agrega el mensaje del usuario al contenedor de chat
+        addMessage(userMessage, 'user');
+
+        // Envía el mensaje al chatbot a través del WebSocket
+        socket.send(userMessage);
+
+        // Borra el texto del campo de entrada del usuario
+        userInput.value = '';
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // Simulación de respuesta del chatbot
+      const botMessage = 'Respuesta del chatbot';
+      
+      // Agrega la respuesta del chatbot al contenedor de chat
+      addMessage(botMessage, 'bot');
+
+      // Borra el texto del campo de entrada del usuario
+      userInput.value = '';
+    }
+
+    // Manejador de eventos para el envío del formulario
+    document.getElementById('user-input').addEventListener('keydown', function(event) {
+      if (event.keyCode === 13) { // 13 es el código de tecla para la tecla Enter
+        event.preventDefault();
+        sendMessage();
+      }
+    });
+  </script>
 </body>
 </html>
