@@ -46,16 +46,9 @@
 
 
 
-
-
-
-
-
-
       // Envía el mensaje al chatbot (puedes utilizar AJAX, WebSocket, etc. según tu configuración de Rasa)
         // URL del servidor de tu chatbot en Rasa
-        const serverUrl = 'https://github.com/DavizBR/Chatbot-Dex';
-        // https://github.com/DavizBR/Chatbot-Dex.git
+        const serverUrl = 'https://github.com/DavizBR/Chatbot-Dex.git';
 
         // Crea una instancia del WebSocket
         const socket = new WebSocket(serverUrl);
@@ -78,28 +71,6 @@
 
         // Envía el mensaje al chatbot a través del WebSocket
         socket.send(userMessage);
-
-        // Borra el texto del campo de entrada del usuario
-        userInput.value = '';
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       // Simulación de respuesta del chatbot
       const botMessage = 'Respuesta del chatbot';
