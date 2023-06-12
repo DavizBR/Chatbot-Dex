@@ -13,6 +13,11 @@
 action_endpoint:
   url: "http://localhost:5055/webhook"
 
+endpoints:
+  webhook:
+    url: "https://chatbot-oisv6kvjp-davizbr.vercel.app/model/parse"
+
+
 #models:
 #  default:
 #    path: "models/20230411-125735-sophisticated-vertex.tar.gz"
