@@ -15,7 +15,7 @@ action_endpoint:
 
 endpoints:
   webhook:
-    url: "https://chatbot-drg95blax-davizbr.vercel.app/model/parse"
+    url: "https://chatbot-4yp8r6tky-davizbr.vercel.app/model/parse"
 
 
 #models:
