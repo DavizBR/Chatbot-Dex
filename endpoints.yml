@@ -10,15 +10,15 @@
 # Server which runs your custom actions.
 # https://rasa.com/docs/rasa/custom-actions
 
-action_endpoint:
-  #url: "http://localhost:5055/webhook"
-  url: "https://chatbot-dex.vercel.app/"
 
+  #url: "http://localhost:5055/webhook"
+
+action_endpoint:
+  url: "https://chatbot-dex.vercel.app/webhook"
 
 endpoints:
   webhook:
-    url: "https://chatbot-dex.vercel.app/"
-
+    url: "https://chatbot-dex.vercel.app/webhooks/rest/webhook"
 
 #models:
 #  default:
