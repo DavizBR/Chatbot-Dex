@@ -11,7 +11,9 @@
 # https://rasa.com/docs/rasa/custom-actions
 
 action_endpoint:
-  url: "http://localhost:5055/webhook"
+  #url: "http://localhost:5055/webhook"
+  url: "https://chatbot-dex.vercel.app/"
+
 
 endpoints:
   webhook:
