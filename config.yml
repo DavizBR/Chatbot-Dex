@@ -28,7 +28,7 @@ pipeline:
 - name: EntitySynonymMapper
    #- name: ResponseSelector
     #  epochs: 100
-#     constrain_similarities: true
+     constrain_similarities: true
 #   - name: FallbackClassifier
    #- name: RegexEntityExtractor
      #case_sensitive: False
@@ -65,3 +65,4 @@ policies:
 #     epochs: 100
 #     constrain_similarities: true
 #assistant_id: 20230524-191552-clever-center
+assistant_id: 20230619-193024-marked-click
