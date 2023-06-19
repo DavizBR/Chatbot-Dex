@@ -11,14 +11,28 @@
 # https://rasa.com/docs/rasa/custom-actions
 
 
-  #url: "http://localhost:5055/webhook"
+  #url: "http://localhost:5055/webhook
 
-action_endpoint:
-  url: "https://chatbot-dex.vercel.app/webhook"
+#rest:
+  # you don't need to provide anything here - this channel doesn't
+  # require any credentials
 
 endpoints:
   webhook:
-    url: "https://chatbot-dex.vercel.app/webhooks/rest/webhook"
+    url: "https://chatbot-dex.vercel.app/webhook"
+
+  tracker_store: # Endpoint para almacenar el estado del tracker
+    type: "SQL" # Tipo de tracker store, en este ejemplo se utiliza SQL
+    dialect: "sqlite" # Dialecto de la base de datos
+    url: "sqlite:///path/to/database.db" # URL de la base de datos SQLite
+
+
+action_endpoint:
+  url: "http://localhost:5055/webhook"
+
+#endpoints:
+  #webhook:
+    #url: "https://chatbot-dex.vercel.app/webhooks/rest/webhook"
 
 #models:
 #  default:
@@ -26,10 +40,10 @@ endpoints:
 #    model: "Rotom"
 
 #socketio:
-#  user_message_evt: user_uttered
-#  bot_message_evt: bot_uttered
-#  session_persistence: true
-#  url: "https://davizbr.github.io/Chatbot-Dex"
+  #user_message_evt: user_uttered
+  #bot_message_evt: bot_uttered
+  #session_persistence: true
+  #url: "https://davizbr.github.io/Chatbot-Dex"
 
 
 # Tracker store which is used to store the conversations.

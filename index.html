@@ -16,7 +16,7 @@
     }
     
     #chat-header {
-      background-color: red;
+      background-color: turquoise;
       color: #fff;
       padding: 10px;
       font-weight: bold;
@@ -40,52 +40,16 @@
   </style>
 </head>
 <body>
+
+  <h1>Web de prueba</h1>
+  <p>Espero que esto funcione</p>
+
   <div id="chat-widget">
     <div id="chat-header">Chat</div>
     <div id="chat-messages"></div>
     <input type="text" id="chat-input" placeholder="Escribe un mensaje..." />
   </div>
+  <script src="index.js"></script>
 
-  <script>
-    var chatInput = document.getElementById('chat-input');
-    var chatMessages = document.getElementById('chat-messages');
-  
-    chatInput.addEventListener('keydown', function(event) {
-      if (event.keyCode === 13) {
-        var message = chatInput.value;
-        if (message.trim() !== '') {
-          var messageElement = document.createElement('div');
-          messageElement.textContent = 'Tú: ' + message;
-          chatMessages.appendChild(messageElement);
-          chatInput.value = '';
-  
-          // Enviar mensaje a la API de Rasa
-          fetch('https://chatbot-dex.vercel.app/webhooks/rest/webhook', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ message: message })
-          })
-          .then(function(response) {
-            return response.json();
-          })
-          .then(function(data) {
-            // Mostrar la respuesta del chatbot en el widget
-            if (data.length > 0) {
-              var botResponse = data[0].text;
-              var botResponseElement = document.createElement('div');
-              botResponseElement.textContent = 'Bot: ' + botResponse;
-              chatMessages.appendChild(botResponseElement);
-            }
-          })
-          .catch(function(error) {
-            console.error('Error:', error);
-          });
-        }
-      }
-    });
-  </script>
-  
 </body>
 </html>
