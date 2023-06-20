@@ -21,10 +21,10 @@ endpoints:
   webhook:
     url: "https://chatbot-dex.vercel.app/webhook"
 
-  tracker_store: # Endpoint para almacenar el estado del tracker
-    type: "SQL" # Tipo de tracker store, en este ejemplo se utiliza SQL
-    dialect: "sqlite" # Dialecto de la base de datos
-    url: "sqlite:///path/to/database.db" # URL de la base de datos SQLite
+ # tracker_store: # Endpoint para almacenar el estado del tracker
+  #  type: "SQL" # Tipo de tracker store, en este ejemplo se utiliza SQL
+ #   dialect: "sqlite" # Dialecto de la base de datos
+ #   url: "sqlite:///path/to/database.db" # URL de la base de datos SQLite
 
 
 action_endpoint:
